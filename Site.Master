@@ -1,0 +1,94 @@
+<%@ Master Language="C#" AutoEventWireup="true"
+    CodeBehind="Site.Master.cs"
+    Inherits="MasterPageWebApplication.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>My Web Application</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .menu {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            margin: 20px;
+        }
+
+        .content {
+            padding: 30px;
+            min-height: 400px;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+    </style>
+
+    <asp:ContentPlaceHolder ID="head"
+        runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+<body>
+
+<form id="form1" runat="server">
+
+    <div class="header">
+        <h1>My Web Application</h1>
+    </div>
+
+    <div class="menu">
+
+        <asp:HyperLink ID="HomeLink"
+            runat="server"
+            NavigateUrl="~/Default.aspx">
+            Home
+        </asp:HyperLink>
+
+        <asp:HyperLink ID="AboutLink"
+            runat="server"
+            NavigateUrl="~/About.aspx">
+            About
+        </asp:HyperLink>
+
+    </div>
+
+    <div class="content">
+
+        <asp:ContentPlaceHolder ID="MainContent"
+            runat="server">
+        </asp:ContentPlaceHolder>
+
+    </div>
+
+    <div class="footer">
+        <p>© 2026 My Web Application</p>
+    </div>
+
+</form>
+
+</body>
+</html>
